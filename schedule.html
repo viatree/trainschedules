@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>LA-Station Schedule</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- JQuery JS -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <!-- Boostrap JS -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- Custom CSS -->
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+  <!-- Animate CSS -->
+	<link type="text/css" rel="stylesheet" href="css/animate.min.css">
+  <!-- Components -->
+  <link type="text/css" rel="stylesheet" href="css/component.css">
+  <!-- Font Awesome -->
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- Google Web Font  -->
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300">
+  
+</head>
+
+<body id="top" data-offset="50" data-target="navbar-collapse">
+
+  <!-- Preloader -->
+  <div class="preloader">
+      <div class="sk-spinner sk-spinner-pulse"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+        </button>
+
+        <a href="#top" class="navbar-brand smoothScroll">LA-Station</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        <ul class="nav navbar-nav navbar-right">
+
+          <li>
+            <a href="index.html" class="smoothScroll"><span>Home</span></a>
+          </li>
+
+          <li>
+            <a href="#about" class="smoothScroll"><span>About</span></a>
+          </li>
+
+          <li>
+            <a href="#gallery" class="smoothScroll"><span>Gallery</span></a>
+          </li>
+
+          <li>
+            <a href="#Schedule" class="smoothScroll"><span>Schedule</span></a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Home -->
+  <section id="home">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-offset-1 col-md-10 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+          <h1 class="wow fadeInUp" data-wow-delay="0.6s">Current information on train travel</h1>
+          <p class="wow fadeInUp" data-wow-delay="0.9s">The train schedule will always be updated by the system, your comfort is our priority.</p>
+          <a href="#Schedule" class="smoothScroll btn btn-success btn-lg wow fadeInUp" data-wow-delay="1.6s">Train Schedule</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section id="gallery">
+  <h1>ATTENTION!</h1>
+   <div class="container1">
+       
+       <div class="box">
+
+        <img src="images/mask.jpg" />
+        <h3>Wear Mask!</h3>
+        <p>
+          When choosing a mask, look at how well it fits. Gaps can let air with respiratory droplets leak in and out around the edges of the mask. Gaps can be caused by choosing the wrong size or type of mask and when a mask is worn with facial hair.
+        </p>
+      </div>
+      <div class="box">
+        <img src="images/social.jpg" />
+        <h3>Social Distancing!</h3>
+        <p>
+          To support public health,please mantain a minimum distance of 1-2 M or 6-12 feet.
+        </p>
+      </div>
+      <div class="box">
+        <img src="images/was.jpg" />
+        <h3>Don't Forget To Wash Hands</h3>
+        <p>
+          Learn when and how you should wash your hands to stay healthy below and how to properly wash your hands with the step by step image to the left.
+        </p>
+      </div>
+    </div>
+</section>
+
+  <!-- Schedule -->
+  <section id="Schedule">
+    <div class="container">
+      <div class="row">
+        <br>
+        <br>
+         <div class="col-lg-15" id="table-div" >
+            <div class="panel panel-body" id="table-panel">
+                <p id="heading">Train Schedule</p>
+                        <table class="table table-bordered" id="table-header">
+                            <tr>
+                                <td style="width: 24.66%">Train Name</td>
+                                <td style="width: 21.66%">Destination</td>
+                                <td style="width: 14.66%">Frequency</td>
+                                <td style="width: 14.66%">Next arrival</td>
+                                <td style="width: 12.66%">Arriving in </td>
+                            </tr>
+                        </table>
+                     <div id="table-display">
+                        <table class="table table-bordered" id="table">
+                               <tbody id="table-body2"></tbody> 
+
+                                <tbody id="table-body"></tbody>
+                        </table>
+                    </div>
+        </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <section id="about">
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+ <hr>
+        <div class="col-sm-12 col-md-6">
+          <h1>About</h1>
+          <p class="text-justify">LA Station <i>was founded in 2022 and continues to grow. </i> Lenteng Agung Station or commonly abbreviated as LA is one of the modern transportation accesses today
+This is most often used as the main means of transportation.
+One of the railroad lines with the highest traffic flow is
+the Lenteng Agung-South Tangerang route
+With higher levels of current should be able to conduct
+optimal train scheduling according to the level of needs
+rail transport by the number of passengers, the number of trains,
+number of train lines and train departure times between stations At LA station.</p>
+        </div>
+<br><br>
+<br><br>
+<br><br>
+        <div class="col-md-6 col-md-3">
+         <h2>Call Center</h2>
+         <a href="tel:+62 812 3221  1223"><h2>+62 812 3221 1223</h2></a> 
+         <a href="email:Lastation@gmail.com"><h2>Lastation@gmail.com</h2></a>
+        </div>
+        <div class="col-md-6 col-md-3">
+         <h2>Call Center Complain</h2>
+         <a href="tel:+62 22198998"><h2>+62 22198998</h2>Sexual harassment</a> 
+         <a href="tel:+62 221 322"><h2>+62 221 322</h2>Lost And Found</a>
+        </div>
+  <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+            <a href="#">VeelaSlavia</a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+       
+    </div>
+
+  
+  </footer>
+</section>
+  <!-- Back to Top -->
+  <a href="#top" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+  
+  <!-- JS 7 -->
+  <script type="text/javascript" src="js/javascript6.js"></script>
+  <!-- Firebase -->
+  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+  <!-- Custom JS -->
+  <script type="text/javascript" src="js/custom.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <!-- Moment JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-duration-format/1.3.0/moment-duration-format.min.js"></script>
+  <!-- Smooth Scroll -->
+  <script type="text/javascript" src="js/smoothscroll.js"></script>
+  <!-- Modernizer JS -->
+  <script type="text/javascript" src="js/modernizr.custom.js"></script>
+  <!-- WOW JS -->
+  <script type="text/javascript" src="js/wow.min.js"></script>
+
+</body>
+</html>

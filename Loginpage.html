@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>LA-Station</title>
+		<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--bootstrap-->
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<!-- css-->
+		<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<!--fonts-->
+		<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<!--script-->
+		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+        const firebaseConfig = {
+  apiKey: "AIzaSyAbOKzmEIUHuytIO80h43h4DSwLpn3vL5o",
+    authDomain: "latrain-f3c63.firebaseapp.com",
+    databaseURL: "https://latrain-f3c63-default-rtdb.firebaseio.com",
+    projectId: "latrain-f3c63",
+    storageBucket: "latrain-f3c63.appspot.com",
+    messagingSenderId: "265323941349",
+    appId: "1:265323941349:web:0396d1ac0049bd530f330c",
+    measurementId: "G-DGH27D1SKE"
+  };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+//      firebase.analytics();
+    </script>
+    <style type="text/css">
+      .form-control .form-control-user{
+        box-sizing : border-box;
+        width: 100%;
+        padding: 10px;
+        font-size: 11pt;
+        margin-bottom: 20px;
+      }
+      .form-group , .form-control .form-control-user{
+        width: 100%;
+      }
+    </style>
+</head>
+<body>
+   			<!-- Page Heading -->
+	  <div class="kotak_login" style="width: 350px; background: #FFDAB9; margin: 80px auto; padding: 30px 20px;">
+          <h1 class="h3 mb-4 text-gray-800" style="text-align: center; color: #FA8072;">Login</h1>
+          
+          <form class="user">
+            
+            <div class="form-group">
+                    <label>E-Mail</label>
+                    <input type="email" class="form-control form-control-user" id="email" placeholder=""
+                    style="width: 100%;">
+            </div>
+            <br/>
+              
+              <div class="form-group">
+                    <label>Password:</label><br/>
+                    <input type="password" class="form-control form-control-user" id="password" placeholder=""
+                    style="width: 100%;">
+            </div>
+              
+            <hr>
+            <button type="button" class="btn btn-primary" onclick="signUp()">
+                Sign Up
+            </button>
+            <button type="button" class="btn btn-primary" onclick="signIn()">
+                Sign In
+            </button>
+            <button type="button" class="btn btn-primary" onclick="signOut()">
+                Sign Out
+            </button>
+          </form>
+        </div>
+        
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+  <!-- Custom scripts for all pages-->
+  <script>
+      
+      const auth = firebase.auth();
+      
+      function signUp() {
+          
+          var email = document.getElementById("email");
+          var password = document.getElementById("password");
+          
+          const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
+          promise.catch(e => alert(e.message));
+          
+          alert("Signed Up");
+      }
+      
+      function signIn() {
+          
+          var email = document.getElementById("email");
+          var password = document.getElementById("password");
+          
+          const promise = auth.signInWithEmailAndPassword(email.value, password.value);
+          promise.catch(e => alert(e.message));
+          
+//          take user to a different pages or home page
+        window.location.href = "admin.html";
+
+      }
+      
+      function signOut(){
+          auth.signOut();
+          alert("Signed Out");
+      }
+      
+      auth.onAuthStateChanged(function(user) {
+          
+         if (user) {
+            
+            var email = user.email;
+            alert("Active User " + email);
+            
+//            is signed in
+    
+        } else {
+            
+            alert("No Active User");
+            
+//            no user is signed in
+            
+        }
+          
+      });
+  </script>
+    <!---->
+</body>
+</html>
